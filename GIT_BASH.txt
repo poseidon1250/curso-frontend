@@ -1,0 +1,6 @@
+pwd : localizacion actual
+cd ingresar en carpeta
+ls : mostrar archivos dentro de al carpeta
+stylus 'archivo' : para compilar archivp
+stylus 'archivo' -c -w : para solo guardar en sublime y que vaya compilando en tiempo real
+ 
