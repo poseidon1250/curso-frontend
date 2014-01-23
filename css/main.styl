@@ -1,5 +1,6 @@
 gris_oscuro=#444
 azul=#22bce0
+naranja=#dd4f24
 body
 	background #e8e8e8
 	color gris_oscuro
@@ -8,8 +9,12 @@ body
 
 header
 	background gris_oscuro
+	box-shadow 0 5px 0 rgba(0, 0, 0, .2)
 	color white
+	overflow hidden
 	padding 0.5em
+	position relative
+	z-index 2
 
 	.logo
 		border-right 1px solid azul
@@ -18,19 +23,97 @@ header
 			width 52px
 	.titular
 		margin 0 80px 0 70px
-		titulo
+		.filtro 
+			color azul
+			font-size 14px
+			font-style italic
+			font-weight bold
+			text-decoration none
+
+		.publicar
+			background naranja
+			color white
+			font-style italic
+			padding 0.2em 0.5em
+			text-decoration none
+			float right
+			text-shadow 1px 1px 0px black
+
+		.titulo
 			font-size 18px
 			font-weight normal
-			margin 0
-			padding 0
+			margin 10
+			padding 10
+
 	.usuario
+		position absolute
+		right 0
+		top 0
 		.avatar
+			margin 0 1.1em 0 0
+			z-index 69			
 			img
-				width 50px
 				border-radius 50%
+				width 50px
+		.flechita
+			background naranja
+			color white
+			display block
+			padding 2px
+			position absolute
+			right 0
+			text-align right
+			text-decoration none
+			top 15px
+			width 50%
+			z-index 0 
 
 nav
 	background azul
+	border-left 15px solid white
+	position relative
+	
+	&:before
+		border-bottom 20px solid azul
+		border-top 20px solid azul
+		content ""
+		border-left 7px solid white
+		position absolute 
+		left 0
+		top 0
+
+		 
+
+	.menu
+		height 40px 
+		line-height 40px
+		margin 0
+		padding 0
+		overflow-x auto 
+		white-space nowrap
+		li
+			display inline-block
+
+			a
+				color white
+				display block
+				margin 0 0.5em
+				padding 0 0.2em 
+				text-decoration none
+
+				&:hover
+					background rgba(black, .1)
+
+.posts 
+	padding 0.5em
+
+	.post
+		background white
+		border-radius 0 0 0.5em 0.5em
+		box-shadow 2px 2px 10px rgba(black, .5)
+		
+
+
 
 .left
 	float left
