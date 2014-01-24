@@ -2,6 +2,19 @@ gris_oscuro=#444
 azul=#22bce0
 naranja=#dd4f24
 gris_texto=#7a7a7a
+
+@font-face {
+	font-family: 'sirope';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 a
 	color naranja
 
@@ -60,6 +73,9 @@ header
 			text-decoration none
 			float right
 			text-shadow 1px 1px 0px black
+			&:before
+				content "\e600"
+				font-family "sirope"
 
 		.titulo
 			font-size 18px
@@ -87,8 +103,11 @@ header
 			text-align right
 			text-decoration none
 			top 15px
-			width 50%
-			z-index 0 
+			width 25%
+			z-index 0
+			&:before
+				content "\e603"
+				font-family "sirope" 
 
 nav
 	background azul
@@ -113,6 +132,9 @@ nav
 		padding 0
 		overflow-x auto 
 		white-space nowrap
+		&::-webkit-scrollbar
+			display none
+
 		li
 			display inline-block
 
@@ -133,7 +155,8 @@ nav
 		background white
 		border-radius 0 0 0.5em 0.5em
 		box-shadow 2px 2px 10px rgba(black, .5)
-		gris_texto
+		color gris_texto
+		margin-bottom 0.5em
 
 		.acciones
 			border-top 3px solid azul
@@ -147,10 +170,19 @@ nav
 				.down
 					text-decoration none
 
+
 				.down 
 					color red
+					&:before 
+						font-family "sirope"
+						content "\e604"
+						vertical-align middle
 				.up 
-					color green	
+					color green
+					&:before 
+						font-family "sirope"
+						content "\e603"
+						vertical-align middle	
 
 			.datos
 				float right
@@ -163,6 +195,15 @@ nav
 					text-decoration none
 					margin 0 1em 0 0
 
+				.estrellita
+					
+					text-decoration none
+					&:before
+						color rgba(255, 190, 0, .75)
+						font-family "sirope"
+						content "\e602"
+						vertical-align middle
+						font-size 1.2em
 		.descripcion
 			
 			.detalles
@@ -199,10 +240,30 @@ nav
 					vertical-align top
 					width 120px
 
-
-
 .left
 	float left
 
 .right
 	float right
+
+@media screen and (min-width: 768px)
+	
+	header
+		.titular
+			.publicar
+				font-size 1.5em
+				position relative
+				padding-left 3em
+				&:before
+					position absolute
+					left 0 
+					top -5px
+					font-size 2em
+
+	.posts
+		.post
+			width 48%
+			display inline-block
+			vertical-align top				
+			&:nth-child(odd)	
+				margin-right 2%
